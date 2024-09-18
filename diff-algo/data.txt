@@ -1,0 +1,12 @@
+
+fs.stat("data.txt", function (err, stat) {
+    if (err == null) {
+    console.log("File exists brother");
+    } else if (err.code === "ENOENT") {
+    // file does not exist
+    fs.writeFile("data.txt", "DANMBN Some log
+");
+    } else {
+    console.log("Some other error, I'm just a girl pls fix: ", err.code);
+    }
+});
